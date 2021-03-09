@@ -1,0 +1,6 @@
+# do daily/weekly/monthly maintenance
+# min   hour    day     month   weekday command
+0       *       *       *       *       run-parts /etc/cron.hourly
+0       2       *       *       *       run-parts /etc/cron.daily
+0       3       *       *       6       run-parts /etc/cron.weekly
+0       5       1       *       *       run-parts /etc/cron.monthly
