@@ -6,4 +6,4 @@ LABEL version="1.5.0" \
 ADD rootfs /bld
 RUN sh /bld/deploy
 
-CMD ["crond", "-f"]
+CMD ["/sbin/crond", "-f"]
