@@ -1,9 +1,9 @@
 FROM debian
 
-LABEL version="1.5.0" \
+LABEL version="1.6.0" \
       maintainer="mail@anrip.com"
 
 ADD rootfs /bld
 RUN sh /bld/deploy
 
-CMD ["/sbin/crond", "-f"]
+CMD ["/bin/myinit"]
