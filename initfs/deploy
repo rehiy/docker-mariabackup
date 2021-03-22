@@ -14,8 +14,10 @@ apt install -y mariadb-backup percona-xtrabackup-24
 rm -rf /etc/cron.*/*
 rm -rf /etc/init.d/*
 
-ln -s /bin/busybox /sbin/init
-ln -s /bin/busybox /sbin/crond
+ln -sf /bin/busybox /bin/sh
+ln -sf /bin/busybox /bin/ps
+ln -sf /bin/busybox /sbin/init
+ln -sf /bin/busybox /sbin/crond
 
 for spl in hourly daily weekly monthly; do
     mkdir -p /etc/cron.$spl
