@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+
+if [ "$1" == "start" ]; then
+
+    crond -c /etc/crontabs
+
+fi

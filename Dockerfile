@@ -6,4 +6,4 @@ LABEL version="1.6.0" \
 ADD initfs /initfs
 RUN sh /initfs/deploy
 
-CMD ["/bin/myinit"]
+CMD ["/sbin/init"]

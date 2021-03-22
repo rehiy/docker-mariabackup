@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-
-if [ -x /opt/myinit ]; then
-    /opt/myinit
-fi
-
-exec crond -f
- 
