@@ -11,7 +11,7 @@ apt install -y mariadb-backup percona-xtrabackup-24
 
 # busybox
 
-rm -rf /etc/cron.*
+rm -rf /etc/cron.*/*
 rm -rf /etc/init.d/*
 
 ln -s /bin/busybox /sbin/init
