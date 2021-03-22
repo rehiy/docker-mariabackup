@@ -9,17 +9,21 @@ apt install -y apt-transport-https busybox-static curl
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | bash
 apt install -y mariadb-backup percona-xtrabackup-24
 
-# init system
+# busybox
 
-chmod +x `grep '^#!/bin' -rl /ifs`
+rm -rf /etc/cron.*
+rm -rf /etc/init.d/*
 
 ln -s /bin/busybox /sbin/init
 ln -s /bin/busybox /sbin/crond
 
-rm -rf /etc/cron*
 for spl in hourly daily weekly monthly; do
     mkdir -p /etc/cron.$spl
 done
+
+# copy files
+
+chmod +x `grep '^#!/bin' -rl /ifs`
 
 cp -a /ifs/etc /
 cp -a /ifs/usr /
